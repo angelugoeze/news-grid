@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: antiquewhite;
+  color: #212121;
+  font-family: "Playfair Display", serif;
+}
+
+nav {
+  background-color: whitesmoke;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+main {
+  padding: 0 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-item {
+  height: 384px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4sms ease;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+}
+
+.top {
+  justify-content: space-between;
+  color: white;
+  position: relative;
+}
+
+.item-1 {
+  background-image: url("./images/image-1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.item-2 {
+  background-image: url("./images/image-2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.item-3 {
+  background: url("./images/image-3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.item-4 {
+  background-image: url("./images/image-4.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.item-5 {
+  background-image: url("./images/image-5.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.cate-container {
+  background-color: purple;
+  padding: 10px;
+}
+
+.cate-container > a {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.date {
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-day {
+  font-size: 36px;
+}
+
+.date-month {
+  text-transform: uppercase;
+}
+
+.bottom {
+  position: relative;
+}
+
+.bottom > a {
+  color: white;
+  text-decoration: none;
+}
+
+.bottom > a:hover {
+  text-decoration: underline;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(7, 7, 7, 0.4);
+}
+
+.grid-item:hover {
+  background-size: 190%;
+}
+
+.grid-item:hover .overlay {
+  background-color: purple;
+  opacity: 0.4;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .item-1 {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-item {
+    height: 300px;
+  }
+  .item-1 {
+    height: auto;
+    grid-row: span 2;
+  }
+}
